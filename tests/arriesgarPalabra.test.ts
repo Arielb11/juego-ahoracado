@@ -26,7 +26,7 @@ describe('validar letra y restar vida', () => {
       expect(ahorcadoJuego.adivinarLetra('p')).toBe(false);
    })
    test('la letra ingresada no esta contenida en la palabra. se resta una vida', () => {
-      expect(ahorcadoJuego.vidas).toBe(5);
+      expect(ahorcadoJuego.vidas).toBe(8);
    })
    test('el jugador perdió', () => {
       ahorcadoJuego.vidas = 0;
