@@ -21,10 +21,8 @@ export class ahorcado {
         if (this.vidas > 0) {
             if (!this.palabra.includes(letra)) {
                 this.vidas = this.vidas - 1;
-                console.log(' Le quedan ', this.vidas, 'vidas');
             }
         } else {
-            console.log('No tiene mas vidas');
             resultado = false
         }
         return resultado

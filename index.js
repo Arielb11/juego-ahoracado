@@ -12,4 +12,3 @@ function add(numbers) {
 }
 exports.add = add;
 var result = add('1, 2, 4, 5');
-console.log(result);
