@@ -1,21 +1,21 @@
-import { ahorcado } from "../src/arriesgarPalabra";
+import { Ahorcado } from "../src/arriesgarPalabra";
 
 describe('pruebas de ahorcado', () => {
-   const palabra = ['h', 'h', 'h', 'h'];
-   const ahorcadoJuego = new ahorcado(palabra);
+   const palabra = 'hola';
+   const ahorcadoJuego = new Ahorcado(palabra);
    test('la palabra ingresada debe coincidir con la correcta', () => {
       expect(ahorcadoJuego.adivinaPlabra(palabra)).toBe(true);
    });
    test('la palabra ingresada no coicide con la correcta', () => {
-      const palabraIncorrecta = ['h', 'o', 'l', 'a'];
+      const palabraIncorrecta = 'hola';
       expect(ahorcadoJuego.adivinaPlabra(palabraIncorrecta)).toBe(false);
    });
 
 });
 
 describe('validar letra y restar vida', () => {
-   const palabra = ['h', 'o', 'l', 'a'];
-   const ahorcadoJuego = new ahorcado(palabra);
+   const palabra = 'hola';
+   const ahorcadoJuego = new Ahorcado(palabra);
    test('la letra ingresada se encuentra en la palabra mantiene las vidas iguales', () => {
       expect(ahorcadoJuego.adivinarLetra('l')).toBe(true);
    })

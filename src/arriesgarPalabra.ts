@@ -1,14 +1,14 @@
-export class ahorcado {
+export class Ahorcado {
     public vidas: number = 6;
-    public palabra: string[];
+    public palabra: string;
 
-    constructor(palabra: string[]) {
+    constructor(palabra: string) {
         this.palabra = palabra
     }
 
-    public adivinaPlabra(palabra: string[]): boolean {
+    public adivinaPlabra(palabra: String): boolean {
         let resultado;
-        if (palabra != this.palabra) {
+        if (palabra !== this.palabra) {
             resultado = false;
         } else {
             resultado = true;
@@ -27,4 +27,6 @@ export class ahorcado {
         }
         return resultado
     }
+
+ 
 }
