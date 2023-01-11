@@ -7,7 +7,7 @@ describe('pruebas de ahorcado', () => {
       expect(ahorcadoJuego.adivinaPlabra(palabra)).toBe(true);
    });
    test('la palabra ingresada no coicide con la correcta', () => {
-      const palabraIncorrecta = 'hola';
+      const palabraIncorrecta = 'holaa';
       expect(ahorcadoJuego.adivinaPlabra(palabraIncorrecta)).toBe(false);
    });
 
