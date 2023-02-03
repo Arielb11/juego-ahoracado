@@ -19,6 +19,6 @@ jobs:
         node-version: 14
     - run: npm ci
     - run: npm run build --if-present
-    - npm: test jest
-    - npm: test
-    - npm: test:coverage
+    - uses: npm test jest
+    - uses: npm test
+    - uses: npm test:coverage
