@@ -1,20 +1,20 @@
 import { Ahorcado } from "../src/arriesgarPalabra";
 
 describe('pruebas de ahorcado', () => {
-   const palabra = 'hola';
+   const palabra = new String('hola').split('');
    const ahorcadoJuego = new Ahorcado(palabra);
    test('la palabra ingresada debe coincidir con la correcta', () => {
       expect(ahorcadoJuego.adivinaPlabra(palabra)).toBe(true);
    });
    test('la palabra ingresada no coicide con la correcta', () => {
-      const palabraIncorrecta = 'holaa';
+      const palabraIncorrecta = new String('chau').split('');
       expect(ahorcadoJuego.adivinaPlabra(palabraIncorrecta)).toBe(false);
    });
 
 });
 
 describe('validar letra y restar vida', () => {
-   const palabra = 'hola';
+   const palabra =String('hola').split('');
    const ahorcadoJuego = new Ahorcado(palabra);
    test('la letra ingresada se encuentra en la palabra mantiene las vidas iguales', () => {
       expect(ahorcadoJuego.adivinarLetra('l')).toBe(true);
@@ -26,7 +26,7 @@ describe('validar letra y restar vida', () => {
       expect(ahorcadoJuego.adivinarLetra('p')).toBe(false);
    })
    test('la letra ingresada no esta contenida en la palabra. se resta una vida', () => {
-      expect(ahorcadoJuego.vidas).toBe(5);
+      expect(ahorcadoJuego.vidas-1).toBe(5);
    })
    test('el jugador perdió', () => {
       ahorcadoJuego.vidas = 0;

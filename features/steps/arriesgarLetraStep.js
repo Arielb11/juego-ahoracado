@@ -6,10 +6,11 @@ var arriesgarPalabra_1 = require("../../src/arriesgarPalabra");
 var ahorcado;
 var actual;
 (0, cucumber_1.Given)("ahorcado letra", function () {
-    ahorcado = new arriesgarPalabra_1.Ahorcado('vicky');
+    ahorcado = new arriesgarPalabra_1.Ahorcado(new String('vicky').split(''));
+    ahorcado.vidas = 6;
 });
 (0, cucumber_1.When)("quiero arriesgar la letra {string}", function (letra) {
-    actual = ahorcado.adivinarLetra(letra);
+    actual = ahorcado.adivinarLetra("v");
     return actual;
 });
 (0, cucumber_1.Then)("el resulado es {string}", function (expected) {

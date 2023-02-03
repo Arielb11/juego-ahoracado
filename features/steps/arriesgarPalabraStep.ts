@@ -5,9 +5,9 @@ import { Ahorcado } from "../../src/arriesgarPalabra";
 let ahorcado : Ahorcado;
 let actual: boolean;
 Given("ahorcado", ()=>{
-ahorcado = new Ahorcado('vicky');
+ahorcado = new Ahorcado(String('vicky').split(''));
 })
-When("quiero arriesgar {string}", (palabra: string)=>{
+When("quiero arriesgar {string}", (palabra: string[])=>{
 actual = ahorcado.adivinaPlabra(palabra);
 return actual;
 })

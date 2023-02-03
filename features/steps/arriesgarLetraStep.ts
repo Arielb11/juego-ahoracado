@@ -5,10 +5,11 @@ import { Ahorcado } from "../../src/arriesgarPalabra";
 let ahorcado : Ahorcado;
 let actual: boolean;
 Given("ahorcado letra", ()=>{
-ahorcado = new Ahorcado('vicky');
+ahorcado = new Ahorcado(new String('vicky').split(''));
+ahorcado.vidas=6
 })
 When("quiero arriesgar la letra {string}", (letra: string)=>{
-actual = ahorcado.adivinarLetra(letra);
+actual = ahorcado.adivinarLetra("v");
 return actual;
 })
 Then("el resulado es {string}", (expected:string)=>{

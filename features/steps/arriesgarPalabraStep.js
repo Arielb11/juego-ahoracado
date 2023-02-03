@@ -6,7 +6,7 @@ var arriesgarPalabra_1 = require("../../src/arriesgarPalabra");
 var ahorcado;
 var actual;
 (0, cucumber_1.Given)("ahorcado", function () {
-    ahorcado = new arriesgarPalabra_1.Ahorcado('vicky');
+    ahorcado = new arriesgarPalabra_1.Ahorcado(String('vicky').split(''));
 });
 (0, cucumber_1.When)("quiero arriesgar {string}", function (palabra) {
     actual = ahorcado.adivinaPlabra(palabra);
