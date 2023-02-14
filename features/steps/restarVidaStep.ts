@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { Ahorcado } from "../../src/arriesgarPalabra";
 
 let ahorcado : Ahorcado;
-let actual: number;
+let actual: number | undefined;
 Given("se resta una vida del juego", ()=>{
 ahorcado = new Ahorcado(String('vicky').split(''));
 })

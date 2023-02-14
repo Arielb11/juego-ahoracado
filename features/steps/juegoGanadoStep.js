@@ -6,10 +6,10 @@ var arriesgarPalabra_1 = require("../../src/arriesgarPalabra");
 var ahorcado;
 var actual;
 (0, cucumber_1.Given)("se gana el juego del ahorcado", function () {
-    ahorcado = new arriesgarPalabra_1.Ahorcado(String('vicky').split(''));
+    ahorcado = new arriesgarPalabra_1.Ahorcado(new String('vicky').split(''));
 });
 (0, cucumber_1.When)("el jugador arriesga la palabra {string}", function (palabraGanadora) {
-    var palabra = palabraGanadora.split('');
+    var palabra = new String(palabraGanadora).split('');
     actual = ahorcado.adivinaPlabra(palabra);
     return actual;
 });

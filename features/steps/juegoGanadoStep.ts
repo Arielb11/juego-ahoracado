@@ -3,12 +3,12 @@ import { expect } from "chai";
 import { Ahorcado } from "../../src/arriesgarPalabra";
 
 let ahorcado : Ahorcado;
-let actual: boolean;
+let actual: boolean |undefined;
 Given("se gana el juego del ahorcado", ()=>{
-ahorcado = new Ahorcado(String('vicky').split(''));
+ahorcado = new Ahorcado( new String('vicky').split(''));
 })
 When("el jugador arriesga la palabra {string}", (palabraGanadora: string)=>{
-let palabra = palabraGanadora.split('')
+let palabra = new String(palabraGanadora).split('')
 actual = ahorcado.adivinaPlabra(palabra);
 return actual;
 })
