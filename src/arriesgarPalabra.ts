@@ -39,13 +39,13 @@ export class Ahorcado {
                 resultado = false;
             }
             
-        }else ahorcado.reiniciarJuego();
+        }else this.reiniciarJuego();
         typeof document !== "undefined"?  ahorcado.addLetter(letter):null;
         typeof document !== "undefined"? usedLetters.push(letter):null;
         return resultado;
     }
     reiniciarJuego(){
-        ahorcado.vidas=6;
+        this.vidas=6;
     }
 
     addLetter(letter:String) {
