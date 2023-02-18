@@ -48,7 +48,7 @@ body {
     cursor: pointer;
 }
 
-#arriesgarButton{
+#arriesgarButton, #listoButton{
     margin-top: 20px;
     appearance: none;
     font-family: 'SF Pixelate', sans-serif;

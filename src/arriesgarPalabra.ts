@@ -1,5 +1,5 @@
 //const exports={};
-var words = ['Carne', 'Martillo', 'Lavadora', 'Sucio', 'Cangrejo', 'Lento', 'Alimentos', 'Delgado', 'Cubo', 'Comida', 'Caracol', 'Abajo', 'Alumno', 'Bonito', 'Cesta', 'Sol', 'Beber', 'Botella', 'Hamburguesa', 'Invierno'];
+var words = ['Invierno'];
 export class Ahorcado {
         vidas = 6;
         palabra;
@@ -8,7 +8,16 @@ export class Ahorcado {
             this.palabra = palabra;
             
         } 
-    
+        botonArriesgar() {
+            palabraArriesgada.style.display = 'block';
+            arriesgarButton.style.display = 'none';
+            listoButton.style.display = 'block'
+            document.removeEventListener('keydown', ahorcado.letterEvent);
+            listoButton.addEventListener('click', ahorcado.botonListo)
+        };
+        botonListo() {
+            ahorcado.adivinaPlabra(String(palabraArriesgada.value.toUpperCase()).split(''));
+        };
      adivinaPlabra(palabra: String[]) {
         if(this.vidas>0){
             if (this.palabra.length !== palabra.length) {
@@ -69,6 +78,8 @@ export class Ahorcado {
     endGame(mensaje:String) {
         setTimeout(()=>alert(mensaje),150);
         document.removeEventListener('keydown', ahorcado.letterEvent);
+        listoButton.style.display = 'none';
+        palabraArriesgada.style.display = 'none';
         startButton.style.display = 'block';
     }
     correctLetter(letter:String) {
@@ -122,15 +133,19 @@ export class Ahorcado {
         usedLetters = [];
         mistakes = 0;
         hits = 0;
+        palabraArriesgada.value="";
+        listoButton.style.display = 'none';
+        palabraArriesgada.style.display = 'none';
         wordContainer.innerHTML = '';
         usedLettersElement.innerHTML = '';
         startButton.style.display = 'none';
-        arriesgarButton.style.display ='block';
-        palabraArriesgada.style.display ='block';
+        arriesgarButton.style.display = 'block';
         ahorcado.drawHangMan();
         ahorcado.selectRandomWord();
         ahorcado.drawWord();
         document.addEventListener('keydown', ahorcado.letterEvent);
+        arriesgarButton.addEventListener('click', ahorcado.botonArriesgar);
+        
     };
     
     drawHangMan = () => {
@@ -153,8 +168,12 @@ var arriesgarButton:any = document.getElementById('arriesgarButton');
 arriesgarButton.style.display ='none';
 var palabraArriesgada:any = document.getElementById('palabraArriesgada');
 palabraArriesgada.style.display='none';
-var palabraArriesgadaString:String | undefined = document.querySelector<HTMLInputElement>('palabraArriesgada')?.value;
-var usedLettersElement:any = document.getElementById('usedLetters');
+var listoButton:any = document.getElementById('listoButton');
+listoButton.style.display = 'none';
+var arriesgarButton :any= document.getElementById('arriesgarButton');
+arriesgarButton.style.display = 'none';
+var palabraArriesgada:any = document.getElementById('palabraArriesgada');
+    palabraArriesgada.style.display = 'none';var usedLettersElement:any = document.getElementById('usedLetters');
 var canvas:any = document.getElementById('canvas');
 var ctx:any = canvas.getContext('2d');
 ctx.canvas.width = 0;
@@ -173,4 +192,4 @@ var mistakes:number;
 var hits:number;
 var ahorcado : Ahorcado = new Ahorcado(String("vicky").split(""));
 startButton.addEventListener('click', ahorcado.startGame);
-arriesgarButton.addEventListener('click', ahorcado.adivinaPlabra(String(palabraArriesgadaString).split('')));}
+}

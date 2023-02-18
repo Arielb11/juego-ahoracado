@@ -1,9 +1,8 @@
 "use strict";
-let exports={};
+const exports={};
 exports.__esModule = true;
 exports.Ahorcado = void 0;
-//const exports={};
-var words = ['Carne', 'Martillo', 'Lavadora', 'Sucio', 'Cangrejo', 'Lento', 'Alimentos', 'Delgado', 'Cubo', 'Comida', 'Caracol', 'Abajo', 'Alumno', 'Bonito', 'Cesta', 'Sol', 'Beber', 'Botella', 'Hamburguesa', 'Invierno'];
+var words = ['Invierno'];
 var Ahorcado = /** @class */ (function () {
     function Ahorcado(palabra) {
         this.vidas = 6;
@@ -20,16 +19,31 @@ var Ahorcado = /** @class */ (function () {
         };
         this.palabra = palabra;
     }
+    Ahorcado.prototype.botonArriesgar = function () {
+        palabraArriesgada.style.display = 'block';
+        arriesgarButton.style.display = 'none';
+        listoButton.style.display = 'block';
+        document.removeEventListener('keydown', ahorcado.letterEvent);
+        listoButton.addEventListener('click', ahorcado.botonListo);
+    };
+    ;
+    Ahorcado.prototype.botonListo = function () {
+        ahorcado.adivinaPlabra(String(palabraArriesgada.value.toUpperCase()).split(''));
+    };
+    ;
     Ahorcado.prototype.adivinaPlabra = function (palabra) {
         if (this.vidas > 0) {
             if (this.palabra.length !== palabra.length) {
+                typeof document !== "undefined" ? ahorcado.endGame("PERDISTE :)") : null;
                 return false;
             }
             for (var i = 0; i < this.palabra.length; i++) {
                 if (this.palabra[i] !== palabra[i]) {
+                    typeof document !== "undefined" ? ahorcado.endGame("PERDISTE :)") : null;
                     return false;
                 }
             }
+            typeof document !== "undefined" ? ahorcado.endGame("GANASTE :)") : null;
             return true;
         }
     };
@@ -46,13 +60,13 @@ var Ahorcado = /** @class */ (function () {
             }
         }
         else
-            ahorcado.reiniciarJuego();
+            this.reiniciarJuego();
         typeof document !== "undefined" ? ahorcado.addLetter(letter) : null;
         typeof document !== "undefined" ? usedLetters.push(letter) : null;
         return resultado;
     };
     Ahorcado.prototype.reiniciarJuego = function () {
-        ahorcado.vidas = 6;
+        this.vidas = 6;
     };
     Ahorcado.prototype.addLetter = function (letter) {
         var letterElement = document.createElement('span');
@@ -67,12 +81,14 @@ var Ahorcado = /** @class */ (function () {
         ahorcado.addBodyPart(bodyParts[mistakes]);
         mistakes++;
         if (mistakes === bodyParts.length) {
-            ahorcado.endGame();
-            setTimeout(function () { return alert("PERDISTE :)"); }, 150);
+            ahorcado.endGame("PERDISTE :)");
         }
     };
-    Ahorcado.prototype.endGame = function () {
+    Ahorcado.prototype.endGame = function (mensaje) {
+        setTimeout(function () { return alert(mensaje); }, 150);
         document.removeEventListener('keydown', ahorcado.letterEvent);
+        listoButton.style.display = 'none';
+        palabraArriesgada.style.display = 'none';
         startButton.style.display = 'block';
     };
     Ahorcado.prototype.correctLetter = function (letter) {
@@ -84,8 +100,7 @@ var Ahorcado = /** @class */ (function () {
             }
         }
         if (hits === ahorcado.palabra.length) {
-            ahorcado.endGame();
-            setTimeout(function () { return alert("GANASTE :)"); }, 150);
+            ahorcado.endGame("GANASTE :)");
         }
     };
     Ahorcado.prototype.letterInput = function (letter) {
@@ -121,6 +136,9 @@ var Ahorcado = /** @class */ (function () {
         usedLetters = [];
         mistakes = 0;
         hits = 0;
+        palabraArriesgada.value = "";
+        listoButton.style.display = 'none';
+        palabraArriesgada.style.display = 'none';
         wordContainer.innerHTML = '';
         usedLettersElement.innerHTML = '';
         startButton.style.display = 'none';
@@ -129,6 +147,7 @@ var Ahorcado = /** @class */ (function () {
         ahorcado.selectRandomWord();
         ahorcado.drawWord();
         document.addEventListener('keydown', ahorcado.letterEvent);
+        arriesgarButton.addEventListener('click', ahorcado.botonArriesgar);
     };
     ;
     return Ahorcado;
@@ -139,6 +158,14 @@ if (typeof document !== "undefined") {
     var startButton = document.getElementById('startButton');
     var arriesgarButton = document.getElementById('arriesgarButton');
     arriesgarButton.style.display = 'none';
+    var palabraArriesgada = document.getElementById('palabraArriesgada');
+    palabraArriesgada.style.display = 'none';
+    var listoButton = document.getElementById('listoButton');
+    listoButton.style.display = 'none';
+    var arriesgarButton = document.getElementById('arriesgarButton');
+    arriesgarButton.style.display = 'none';
+    var palabraArriesgada = document.getElementById('palabraArriesgada');
+    palabraArriesgada.style.display = 'none';
     var usedLettersElement = document.getElementById('usedLetters');
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
