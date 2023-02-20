@@ -26,4 +26,5 @@ jobs:
     - run: npm run test-selenium2
     - run: npm run test-selenium3
     - run: npm run test-selenium4
+    - run: npm run lint
 

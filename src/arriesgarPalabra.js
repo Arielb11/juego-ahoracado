@@ -26,11 +26,11 @@ var Ahorcado = /** @class */ (function () {
         document.removeEventListener('keydown', ahorcado.letterEvent);
         listoButton.addEventListener('click', ahorcado.botonListo);
     };
-    ;
+    
     Ahorcado.prototype.botonListo = function () {
         ahorcado.adivinaPlabra(String(palabraArriesgada.value.toUpperCase()).split(''));
     };
-    ;
+    
     Ahorcado.prototype.adivinaPlabra = function (palabra) {
         if (this.vidas > 0) {
             if (this.palabra.length !== palabra.length) {
@@ -149,7 +149,7 @@ var Ahorcado = /** @class */ (function () {
         document.addEventListener('keydown', ahorcado.letterEvent);
         arriesgarButton.addEventListener('click', ahorcado.botonArriesgar);
     };
-    ;
+    
     return Ahorcado;
 }());
 exports.Ahorcado = Ahorcado;
@@ -162,10 +162,6 @@ if (typeof document !== "undefined") {
     palabraArriesgada.style.display = 'none';
     var listoButton = document.getElementById('listoButton');
     listoButton.style.display = 'none';
-    var arriesgarButton = document.getElementById('arriesgarButton');
-    arriesgarButton.style.display = 'none';
-    var palabraArriesgada = document.getElementById('palabraArriesgada');
-    palabraArriesgada.style.display = 'none';
     var usedLettersElement = document.getElementById('usedLetters');
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');

@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var arriesgarPalabra_1 = require("../src/arriesgarPalabra");
+let describe;
 describe('pruebas de ahorcado', function () {
+    var test;
+    var expect;
     var palabra = new String('hola').split('');
     var ahorcadoJuego = new arriesgarPalabra_1.Ahorcado(palabra);
     test('la palabra ingresada debe coincidir con la correcta', function () {
@@ -15,6 +18,8 @@ describe('pruebas de ahorcado', function () {
 describe('validar letra y restar vida', function () {
     var palabra = String('hola').split('');
     var ahorcadoJuego = new arriesgarPalabra_1.Ahorcado(palabra);
+    var test;
+    var expect;
     test('la letra ingresada se encuentra en la palabra mantiene las vidas iguales', function () {
         expect(ahorcadoJuego.adivinarLetra('l')).toBe(true);
     });

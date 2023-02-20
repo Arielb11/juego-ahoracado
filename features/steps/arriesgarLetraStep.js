@@ -10,7 +10,7 @@ var actual;
     ahorcado.vidas = 6;
 });
 (0, cucumber_1.When)("quiero arriesgar la letra {string}", function (letra) {
-    actual = ahorcado.adivinarLetra("v");
+    actual = ahorcado.adivinarLetra(letra);
     return actual;
 });
 (0, cucumber_1.Then)("el resulado es {string}", function (expected) {
