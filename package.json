@@ -6,7 +6,12 @@
   "scripts": {
     "jest": "jest",
     "test:coverage": "jest --coverage",
-    "test": "tsc && cucumber-js features/"
+    "test": "tsc && cucumber-js features/",
+    "test-selenium1": "node selenium/arriesgarPalabra.js",
+    "test-selenium2": "node selenium/arriesgarLetra.js",
+    "test-selenium3": "node selenium/juegoGanado.js",
+    "test-selenium4": "node selenium/restarVida.js"
+
   },
   "keywords": [],
   "author": "",
