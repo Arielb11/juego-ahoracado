@@ -9,7 +9,7 @@ ahorcado = new Ahorcado(new String('vicky').split(''));
 ahorcado.vidas=6
 })
 When("quiero arriesgar la letra {string}", (letra: string)=>{
-actual = ahorcado.adivinarLetra("v");
+actual = ahorcado.adivinarLetra(letra);
 return actual;
 })
 Then("el resulado es {string}", (expected:string)=>{

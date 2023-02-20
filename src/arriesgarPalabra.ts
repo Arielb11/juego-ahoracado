@@ -14,10 +14,10 @@ export class Ahorcado {
             listoButton.style.display = 'block'
             document.removeEventListener('keydown', ahorcado.letterEvent);
             listoButton.addEventListener('click', ahorcado.botonListo)
-        };
+        }
         botonListo() {
             ahorcado.adivinaPlabra(String(palabraArriesgada.value.toUpperCase()).split(''));
-        };
+        }
      adivinaPlabra(palabra: String[]) {
         if(this.vidas>0){
             if (this.palabra.length !== palabra.length) {
@@ -146,7 +146,7 @@ export class Ahorcado {
         document.addEventListener('keydown', ahorcado.letterEvent);
         arriesgarButton.addEventListener('click', ahorcado.botonArriesgar);
         
-    };
+    }
     
     drawHangMan = () => {
         ctx!.canvas.width  = 120;
@@ -170,10 +170,7 @@ var palabraArriesgada:any = document.getElementById('palabraArriesgada');
 palabraArriesgada.style.display='none';
 var listoButton:any = document.getElementById('listoButton');
 listoButton.style.display = 'none';
-var arriesgarButton :any= document.getElementById('arriesgarButton');
-arriesgarButton.style.display = 'none';
-var palabraArriesgada:any = document.getElementById('palabraArriesgada');
-    palabraArriesgada.style.display = 'none';var usedLettersElement:any = document.getElementById('usedLetters');
+var usedLettersElement:any = document.getElementById('usedLetters');
 var canvas:any = document.getElementById('canvas');
 var ctx:any = canvas.getContext('2d');
 ctx.canvas.width = 0;

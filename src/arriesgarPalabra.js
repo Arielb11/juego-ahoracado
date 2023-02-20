@@ -1,7 +1,7 @@
 "use strict";
-const exports={};
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ahorcado = void 0;
+const exports={};
 var words = ['Invierno'];
 var Ahorcado = /** @class */ (function () {
     function Ahorcado(palabra) {
@@ -26,11 +26,9 @@ var Ahorcado = /** @class */ (function () {
         document.removeEventListener('keydown', ahorcado.letterEvent);
         listoButton.addEventListener('click', ahorcado.botonListo);
     };
-    
     Ahorcado.prototype.botonListo = function () {
         ahorcado.adivinaPlabra(String(palabraArriesgada.value.toUpperCase()).split(''));
     };
-    
     Ahorcado.prototype.adivinaPlabra = function (palabra) {
         if (this.vidas > 0) {
             if (this.palabra.length !== palabra.length) {
@@ -149,7 +147,6 @@ var Ahorcado = /** @class */ (function () {
         document.addEventListener('keydown', ahorcado.letterEvent);
         arriesgarButton.addEventListener('click', ahorcado.botonArriesgar);
     };
-    
     return Ahorcado;
 }());
 exports.Ahorcado = Ahorcado;

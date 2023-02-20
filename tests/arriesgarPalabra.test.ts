@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Ahorcado } from "../src/arriesgarPalabra";
 
 describe('pruebas de ahorcado', () => {
