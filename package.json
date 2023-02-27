@@ -11,8 +11,9 @@
     "test-selenium2": "node selenium/arriesgarLetra.js",
     "test-selenium3": "node selenium/juegoGanado.js",
     "test-selenium4": "node selenium/restarVida.js",
-    "lint": "eslint ."
-  },
+    "lint": "eslint .",
+    "build": "npm run lint && npm run test && npm run test:coverage && npm run jest"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",

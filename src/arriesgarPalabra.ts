@@ -1,4 +1,3 @@
-//const exports={};
 var words = ['Invierno'];
 export class Ahorcado {
         vidas = 6;
@@ -79,6 +78,7 @@ export class Ahorcado {
         setTimeout(()=>alert(mensaje),150);
         document.removeEventListener('keydown', ahorcado.letterEvent);
         listoButton.style.display = 'none';
+        arriesgarButton.style.display = 'none';
         palabraArriesgada.style.display = 'none';
         startButton.style.display = 'block';
     }
@@ -183,7 +183,6 @@ var bodyParts = [
     [3, 3, 1, 1],
     [5, 3, 1, 1]
 ];
-//let ahorcado.palabra;
 var usedLetters:String[];
 var mistakes:number;
 var hits:number;

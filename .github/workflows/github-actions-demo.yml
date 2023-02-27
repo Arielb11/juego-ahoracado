@@ -22,6 +22,7 @@ jobs:
     - run: npm test
     - run: npm run test jest
     - run: npm run test:coverage
+    - run: npm run build
     - run: npm run test-selenium1
     - run: npm run test-selenium2
     - run: npm run test-selenium3

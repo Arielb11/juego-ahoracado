@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ahorcado = void 0;
-const exports={};
 var words = ['Invierno'];
 var Ahorcado = /** @class */ (function () {
     function Ahorcado(palabra) {
@@ -86,6 +85,7 @@ var Ahorcado = /** @class */ (function () {
         setTimeout(function () { return alert(mensaje); }, 150);
         document.removeEventListener('keydown', ahorcado.letterEvent);
         listoButton.style.display = 'none';
+        arriesgarButton.style.display = 'none';
         palabraArriesgada.style.display = 'none';
         startButton.style.display = 'block';
     };
@@ -172,7 +172,6 @@ if (typeof document !== "undefined") {
         [3, 3, 1, 1],
         [5, 3, 1, 1]
     ];
-    //let ahorcado.palabra;
     var usedLetters;
     var mistakes;
     var hits;

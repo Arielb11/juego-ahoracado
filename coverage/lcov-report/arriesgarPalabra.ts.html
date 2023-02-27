@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32.59% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/135</span>
+                <span class='fraction'>44/132</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32.55% </span>
+                <span class="strong">33.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>42/129</span>
+                <span class='fraction'>42/127</span>
             </div>
         
             
@@ -253,12 +253,7 @@
 <a name='L188'></a><a href='#L188'>188</a>
 <a name='L189'></a><a href='#L189'>189</a>
 <a name='L190'></a><a href='#L190'>190</a>
-<a name='L191'></a><a href='#L191'>191</a>
-<a name='L192'></a><a href='#L192'>192</a>
-<a name='L193'></a><a href='#L193'>193</a>
-<a name='L194'></a><a href='#L194'>194</a>
-<a name='L195'></a><a href='#L195'>195</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L191'></a><a href='#L191'>191</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -340,6 +335,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -435,10 +431,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -451,8 +443,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//const exports={};
-var words = ['Invierno'];
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var words = ['Invierno'];
 export class Ahorcado {
         vidas = 6;
         palabra;
@@ -532,6 +523,7 @@ export class Ahorcado {
 <span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >()=&gt;<span class="cstat-no" title="statement not covered" >a</span>lert(mensaje),1</span>50);</span>
 <span class="cstat-no" title="statement not covered" >        document.removeEventListener('keydown', ahorcado.letterEvent);</span>
 <span class="cstat-no" title="statement not covered" >        listoButton.style.display = 'none';</span>
+<span class="cstat-no" title="statement not covered" >        arriesgarButton.style.display = 'none';</span>
 <span class="cstat-no" title="statement not covered" >        palabraArriesgada.style.display = 'none';</span>
 <span class="cstat-no" title="statement not covered" >        startButton.style.display = 'block';</span>
     }
@@ -623,10 +615,7 @@ var palabraArriesgada:any = <span class="cstat-no" title="statement not covered"
 <span class="cstat-no" title="statement not covered" >palabraArriesgada.style.display='none';</span>
 var listoButton:any = <span class="cstat-no" title="statement not covered" >document.getElementById('listoButton');</span>
 <span class="cstat-no" title="statement not covered" >listoButton.style.display = 'none';</span>
-var arriesgarButton :any= <span class="cstat-no" title="statement not covered" >document.getElementById('arriesgarButton');</span>
-<span class="cstat-no" title="statement not covered" >arriesgarButton.style.display = 'none';</span>
-var palabraArriesgada:any = <span class="cstat-no" title="statement not covered" >document.getElementById('palabraArriesgada');</span>
-<span class="cstat-no" title="statement not covered" >    palabraArriesgada.style.display = 'none';v</span>ar usedLettersElement:any = <span class="cstat-no" title="statement not covered" >document.getElementById('usedLetters');</span>
+var usedLettersElement:any = <span class="cstat-no" title="statement not covered" >document.getElementById('usedLetters');</span>
 var canvas:any = <span class="cstat-no" title="statement not covered" >document.getElementById('canvas');</span>
 var ctx:any = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
 <span class="cstat-no" title="statement not covered" >ctx.canvas.width = 0;</span>
@@ -639,7 +628,6 @@ var bodyParts = <span class="cstat-no" title="statement not covered" >[</span>
     [3, 3, 1, 1],
     [5, 3, 1, 1]
 ];
-//let ahorcado.palabra;
 var usedLetters:String[];
 var mistakes:number;
 var hits:number;
@@ -652,7 +640,7 @@ var ahorcado : Ahorcado = <span class="cstat-no" title="statement not covered" >
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-20T23:25:57.620Z
+                at 2023-02-27T21:20:50.001Z
             </div>
         <script src="prettify.js"></script>
         <script>
