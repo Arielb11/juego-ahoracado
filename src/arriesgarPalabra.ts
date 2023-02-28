@@ -19,7 +19,7 @@ export class Ahorcado {
         }
      adivinaPlabra(palabra: String[]) {
         if(this.vidas>0){
-            if (this.palabra.length !== palabra.length) {
+            if (this.palabra.length === palabra.length) {
                 typeof document !== "undefined"?  ahorcado.endGame("PERDISTE :)"):null;
 
                 return false;

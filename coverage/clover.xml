@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1677532850045" clover="3.2.0">
-  <project timestamp="1677532850045" name="All files">
+<coverage generated="1677616050972" clover="3.2.0">
+  <project timestamp="1677616050973" name="All files">
     <metrics statements="127" coveredstatements="42" conditionals="38" coveredconditionals="12" methods="20" coveredmethods="5" elements="185" coveredelements="59" complexity="0" loc="127" ncloc="127" packages="1" files="1" classes="1"/>
     <file name="arriesgarPalabra.ts" path="C:\Users\Usuario\OneDrive\Escritorio\juego-ahoracado_V2\src\arriesgarPalabra.ts">
       <metrics statements="127" coveredstatements="42" conditionals="38" coveredconditionals="12" methods="20" coveredmethods="5"/>

@@ -4,7 +4,7 @@ import { Ahorcado } from "../../src/arriesgarPalabra";
 
 let ahorcado : Ahorcado;
 let actual: boolean |undefined;
-Given("se gana el juego del ahorcado", ()=>{
+Given("se inicia un nuevo juego con la palabra vicky", ()=>{
 ahorcado = new Ahorcado( new String('vicky').split(''));
 })
 When("el jugador arriesga la palabra {string}", (palabraGanadora: string)=>{
